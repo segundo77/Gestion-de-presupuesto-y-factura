@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="../CSS/Modulo-inventario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="contenedor">
+    <header class="encabezado">
+      <div class="contenedor-logo">
+        <img src="/Imagenes/logo 2.PNG" alt="Logo" class="logo">
+      </div>
+      <div class="contenedor-titulo-logo">
+        <h3>Universidad de Oviedo</h3>
+      </div>
+    </header>
+
+    <div class="contenedor-principal">
+        <div class="contenedor-izquierdo">
+            <nav class="menu">
+              <a href="Modulo-gestion-usuarios.html" class="menu-item"><i class="fas fa-user"></i> Usuario</a>  
+              <a href="presupuestos.html" class="menu-item"><i class="fas fa-calculator"></i> Presupuesto</a>
+              <a href="factura.html" class="menu-item"><i class="fas fa-file-invoice"></i> Factura</a>
+              <a href="Modulo-inventario.html" class="menu-item"><i class="fas fa-box"></i> Inventario</a>
+            </nav>
+        </div>
+
+        <div class="contenedor-derecho"> 
+            <h2>Gestión de Inventario</h2>
+
+            <!-- Botones -->
+            <div class="contenedor-boton">
+              <button onclick="mostrarFormulario('registrar')">Registrar</button>
+              <button onclick="mostrarListado('consultar')">Consultar</button>
+              <button onclick="mostrarFormulario('modificar')">Modificar</button>
+              <button onclick="mostrarFormulario('eliminar')">Eliminar</button>
+            </div>
+
+            <!-- REGISTRAR -->
+            <div id="formulario-inventario" style="display: none;">
+                <h3>Registrar Material</h3>
+                <form action="/PHP/registrar_inventario.php" method="POST">
+                    <div class="contenedor-formulario">
+                        <div class="row custom-gutter">
+                            <div class="col-md-6">
+                                <label for="id_material">ID de Material</label>
+                                <input type="number" class="form-control" id="id_material" name="id_material" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nombre_material">Nombre de Material</label>
+                                <input type="text" class="form-control" id="nombre_material" name="nombre_material" required>
+                            </div>
+                        </div>
+
+                        <div class="row custom-gutter">
+                            <div class="col-md-6">
+                                <label for="categoria_material">Categoría</label>
+                                <input type="text" class="form-control" id="categoria_material" name="categoria_material" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="cantidad_material">Cantidad</label>
+                                <input type="number" class="form-control" id="cantidad_material" name="cantidad_material" required>
+                            </div>
+                        </div>
+
+                        <div class="row custom-gutter">
+                            <div class="col-md-6">
+                                <label for="precio_material">Precio</label>
+                                <input type="number" class="form-control" id="precio_material" name="precio_material" required>
+                            </div>
+                        </div>
+
+                        <div class="contenedor-boton">
+                            <button type="submit" class="buttons">Registrar Material</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- CONSULTAR -->
+            <div id="listado-inventarios" style="display: none;">
+              <h3>Listado de Materiales</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla-inventarios">
+                  
+                </tbody>
+              </table>
+            </div>
+
+            <!-- MODIFICAR -->
+            <div id="modificar-inventario" style="display: none;">
+              <h3>Modificar Material</h3>
+              <form action="/PHP/modificar_inventario.php" method="POST">
+                <div class="contenedor-formulario">
+                  <label for="buscar_id">Buscar por ID:</label>
+                  <input type="number" class="form-control" id="buscar_id" name="buscar_id" required>
+
+                  <label for="nuevo_nombre">Nuevo Nombre de Material:</label>
+                  <input type="text" class="form-control" id="nuevo_nombre" name="nuevo_nombre" required>
+
+                  <label for="nueva_categoria">Nueva Categoría:</label>
+                  <input type="text" class="form-control" id="nueva_categoria" name="nueva_categoria" required>
+
+                  <div class="contenedor-boton">
+                    <button type="submit" class="buttons">Modificar Material</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- ELIMINAR -->
+            <div id="eliminar-inventario" style="display: none;">
+              <h3>Eliminar Material</h3>
+              <form action="/PHP/eliminar_inventario.php" method="POST">
+                <div class="contenedor-formulario">
+                  <label for="id_eliminar">ID de Material a eliminar:</label>
+                  <input type="number" class="form-control" id="id_eliminar" name="id_eliminar" required>
+
+                  <div class="contenedor-boton">
+                    <button type="submit" class="buttons">Eliminar Material</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+  <script src="../JS/inventario.js"></script>
+</body>
+</html>

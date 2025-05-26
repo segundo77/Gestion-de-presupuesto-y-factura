@@ -1,0 +1,204 @@
+/* Estilo base del body */
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(135deg, #70e1f5, #ffd194);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Encabezado con logo y título */
+.encabezado {
+  display: flex;
+  height: 130px;
+  background-color: #0056b3;
+  color: white;
+  padding: 20px;
+}
+
+.contenedor-logo .logo {
+  width: 100px;
+}
+
+.contenedor-logo {
+  display: flex;
+}
+
+.contenedor-titulo-logo {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/* Contenedor principal */
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  min-height: 97vh;
+  margin-top: 10px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Layout izquierdo - Menú */
+.contenedor-principal {
+  display: flex;
+  height: 70vh;
+  
+}
+
+.contenedor-izquierdo {
+  background: #003366;
+  color: white;
+  padding: 40px 0px;
+  width: 250px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item {
+  width: 250px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  color: white;
+}
+
+.menu a {
+  font-size: 20px;
+}
+
+.menu-item:hover {
+  background: #004A93;
+  border-radius: 8px;
+}
+
+/* Layout derecho - Contenido */
+.contenedor-derecho {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.contenedor-derecho h2 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Botones CRUD */
+.contenedor-boton {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contenedor-boton button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contenedor-boton button:hover {
+  background-color: #0056b3;
+}
+
+/* Formularios */
+.contenedor-formulario {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.contenedor-formulario label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.contenedor-formulario input,
+.contenedor-formulario select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Tabla de datos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+table th {
+  background-color: #1d74cb;
+  color: white;
+}
+
+/* Grid personalizado para inputs */
+.row.custom-gutter {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.col-md-6 {
+  width: 48%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .col-md-6 {
+    width: 100%;
+  }
+
+  .contenedor-boton {
+    flex-direction: column;
+  }
+
+  .contenedor-principal {
+    flex-direction: column;
+  }
+
+  .contenedor-izquierdo {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .contenedor-derecho {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,117 @@
+body {
+  /* Elimina el margen por defecto y establece una fuente clásica */
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+
+  /* Aplica un fondo con degradado en diagonal de azul claro a durazno */
+  background: linear-gradient(135deg, #70e1f5, #ffd194);
+
+  /* Centra el contenido horizontal y verticalmente con Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Ajusta la altura del cuerpo a la altura completa de la ventana del navegador */
+  height: 100vh;
+}
+
+.login-container {
+  /* Contenedor principal que agrupa los paneles izquierdo y derecho */
+  display: flex;
+  width: 800px;
+  height: 500px;
+
+  /* Fondo blanco con sombra suave y bordes redondeados */
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.left-panel, .right-panel {
+  /* Ambos paneles comparten el mismo tamaño y tienen relleno interno */
+  padding: 40px;
+  flex: 1;
+}
+
+.left-panel {
+  /* Estiliza el panel izquierdo con fondo azul oscuro y texto blanco */
+  background: #003366;
+  color: white;
+
+  /* Centra vertical y horizontalmente el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  /* Define el tamaño del logo y espacio inferior */
+  width: 300; /* Falta la unidad, debería ser por ejemplo "300px" */
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.right-panel h2 {
+  /* Título de bienvenida: espaciado, color y alineación */
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+form {
+  /* Organiza los elementos del formulario en columna */
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  /* Estilo de etiquetas del formulario */
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+input {
+  /* Campos de entrada con padding, borde suave y texto legible */
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  /* Botón de envío con estilo moderno y efectos al pasar el cursor */
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  /* Oscurece el color del botón al pasar el cursor */
+  background: #0056b3;
+}
+
+.link {
+  /* Enlace para recuperar contraseña, alineado a la derecha */
+  display: block;
+  margin-top: 15px;
+  text-align: right;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  /* Subraya el enlace al pasar el cursor */
+  text-decoration: underline;
+}
+
+
+  
